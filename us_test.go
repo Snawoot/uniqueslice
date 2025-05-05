@@ -11,10 +11,8 @@ func TestSimple(t *testing.T) {
 1234
 123`)
 	scanner := bufio.NewScanner(r)
-	//var lines [][]byte
 	var handles []Handle[[]byte, byte]
 	for scanner.Scan() {
-		//lines = append(lines, append(nil, scanner.Bytes()...))
 		handles = append(handles, Make(scanner.Bytes()))
 	}
 	if err := scanner.Err(); err != nil {
